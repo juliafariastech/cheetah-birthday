@@ -1,0 +1,6 @@
+Your video is already connected to the page: copy_B1EBC2E5-03C6-41E4-A8E6-7F39F582D5EB.MOV.
+To replace it later, copy the new video into this folder and update the source in index.html.
+
+Supported formats: MP4, WebM, or MOV.
+The birthday page loads: videos/copy_B1EBC2E5-03C6-41E4-A8E6-7F39F582D5EB.MOV
+The video player has controls and sound enabled.

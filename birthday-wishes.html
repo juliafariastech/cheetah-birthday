@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Wishes for You</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Great+Vibes&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #493b52;
+            font-family: 'Poppins', sans-serif;
+            background:
+                radial-gradient(circle at 14% 18%, rgba(255, 230, 238, 0.8), transparent 25%),
+                radial-gradient(circle at 86% 78%, rgba(255, 225, 165, 0.55), transparent 28%),
+                linear-gradient(135deg, #6d4c87, #c47b91 58%, #efc49b);
+        }
+
+        .page {
+            width: min(920px, 100%);
+            min-height: 100vh;
+            margin: auto;
+            padding: 42px 22px 60px;
+            position: relative;
+        }
+
+        .floating-hearts span {
+            position: fixed;
+            bottom: -30px;
+            color: #fff0f5;
+            font-size: clamp(1.3rem, 3vw, 2.2rem);
+            pointer-events: none;
+            animation: rise 8s linear infinite;
+            opacity: 0;
+        }
+
+        .floating-hearts span:nth-child(1) {
+            left: 8%;
+            animation-delay: 0s;
+        }
+
+        .floating-hearts span:nth-child(2) {
+            left: 24%;
+            animation-delay: 2.6s;
+            color: #ffe6a5;
+        }
+
+        .floating-hearts span:nth-child(3) {
+            left: 70%;
+            animation-delay: 1.4s;
+        }
+
+        .floating-hearts span:nth-child(4) {
+            left: 88%;
+            animation-delay: 4s;
+            color: #ffe6a5;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0) rotate(-12deg) scale(.7);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: .85;
+            }
+
+            85% {
+                opacity: .85;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(18deg) scale(1.15);
+                opacity: 0;
+            }
+        }
+
+        .notebook {
+            position: relative;
+            padding: clamp(26px, 6vw, 62px) clamp(24px, 8vw, 88px) 58px;
+            border: 1px solid #d7cbd4;
+            border-radius: 6px;
+            background:
+                linear-gradient(90deg, transparent 0 56px, rgba(230, 123, 157, .45) 56px 58px, transparent 58px),
+                repeating-linear-gradient(to bottom, #fffdf8 0 34px, #c8dcf0 35px 36px);
+            box-shadow: 0 22px 60px rgba(35, 27, 53, .34), 0 0 0 7px rgba(255, 255, 255, .22);
+            animation: pageIn .8s ease both;
+        }
+
+        .notebook::before {
+            content: '♡ ୨୧ ♡';
+            position: absolute;
+            top: 22px;
+            right: 26px;
+            color: #e77b9d;
+            font-size: 1.55rem;
+            letter-spacing: .12em;
+        }
+
+        .notebook::after {
+            content: '♡ ୨୧ ♡';
+            position: absolute;
+            bottom: 18px;
+            left: 62px;
+            color: #e77b9d;
+            font-size: 1.2rem;
+            letter-spacing: .12em;
+        }
+
+        @keyframes pageIn {
+            from {
+                opacity: 0;
+                transform: translateY(24px) rotate(-1deg);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) rotate(0);
+            }
+        }
+
+        .rings {
+            position: absolute;
+            left: -13px;
+            top: 58px;
+            bottom: 58px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .rings span {
+            width: 26px;
+            height: 12px;
+            border: 3px solid #8f6b91;
+            border-right: 0;
+            border-radius: 12px 0 0 12px;
+            background: #f8d6df;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 26px;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: #76516c;
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(2.5rem, 8vw, 4.8rem);
+            font-weight: 400;
+            line-height: 1;
+            text-align: center;
+            flex: 0 1 auto;
+        }
+
+        .cake {
+            position: relative;
+            width: 110px;
+            height: 108px;
+            flex: 0 0 auto;
+            animation: cakeBob 3s ease-in-out infinite;
+        }
+
+        .cake-plate {
+            position: absolute;
+            left: 3px;
+            bottom: 0;
+            width: 104px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ffe7a9;
+            box-shadow: 0 4px 0 rgba(91, 44, 72, .18);
+        }
+
+        .layer {
+            position: absolute;
+            left: 12px;
+            width: 86px;
+            height: 28px;
+            border: 3px solid #fff0dc;
+            border-radius: 9px 9px 14px 14px;
+            background: #e77b9d;
+            box-shadow: inset 0 -7px rgba(180, 73, 116, .22), 0 5px 0 rgba(102, 42, 82, .14);
+        }
+
+        .layer::after {
+            content: '•  •  •  •';
+            position: absolute;
+            top: 1px;
+            left: 8px;
+            color: #ffe6a4;
+            font-size: .8rem;
+        }
+
+        .layer.bottom {
+            bottom: 7px;
+            background: #d9658c;
+        }
+
+        .layer.middle {
+            bottom: 31px;
+            left: 18px;
+            width: 74px;
+            background: #ef8e9f;
+        }
+
+        .layer.top {
+            bottom: 55px;
+            left: 25px;
+            width: 60px;
+            background: #f4a4ad;
+        }
+
+        .candle {
+            position: absolute;
+            bottom: 75px;
+            width: 8px;
+            height: 24px;
+            border-radius: 3px;
+            background: repeating-linear-gradient(135deg, #fff1b7 0 5px, #e77b9d 5px 9px);
+            z-index: 2;
+        }
+
+        .candle.one {
+            left: 37px;
+        }
+
+        .candle.two {
+            left: 52px;
+            height: 28px;
+        }
+
+        .candle.three {
+            left: 67px;
+        }
+
+        .flame {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            width: 10px;
+            height: 14px;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            background: #ffd76a;
+            box-shadow: 0 0 12px 4px rgba(255, 200, 80, .55);
+            animation: flicker .65s ease-in-out infinite alternate;
+        }
+
+        @keyframes cakeBob {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-2deg);
+            }
+
+            50% {
+                transform: translateY(-7px) rotate(2deg);
+            }
+        }
+
+        @keyframes flicker {
+            from {
+                transform: translateX(-50%) scaleY(.85) rotate(-4deg);
+            }
+
+            to {
+                transform: translateX(-50%) scaleY(1.15) rotate(5deg);
+            }
+        }
+
+        .subtitle {
+            margin: 0 0 26px;
+            color: #8c5b78;
+            font-family: 'Caveat', cursive;
+            font-size: clamp(1.5rem, 4vw, 2.1rem);
+            text-align: center;
+        }
+
+        .wish {
+            margin: 0;
+            white-space: pre-line;
+            font-family: 'Caveat', cursive;
+            font-size: clamp(1.25rem, 3vw, 1.65rem);
+            line-height: 1.5;
+            letter-spacing: 0.01em;
+        }
+
+        .signature {
+            margin: 30px 0 0;
+            color: #c15b83;
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.2rem;
+            text-align: right;
+        }
+
+        .back {
+            display: block;
+            width: fit-content;
+            margin: 30px auto 0;
+            padding: 12px 22px;
+            border-radius: 999px;
+            background: #8d72d6;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 24px rgba(73, 48, 104, .25);
+        }
+
+        @media (max-width: 600px) {
+            .page {
+                padding: 24px 16px 42px;
+            }
+
+            .notebook {
+                padding: 82px 24px 48px 48px;
+            }
+
+            .header {
+                flex-direction: column-reverse;
+                gap: 12px;
+            }
+
+            .rings {
+                top: 54px;
+                bottom: 48px;
+            }
+
+            .notebook::before {
+                top: 16px;
+                right: 16px;
+            }
+        }
+
+        body {
+            background: linear-gradient(145deg, #020d24, #082c59 52%, #0b6378);
+            color: #ffffff;
+        }
+
+        .notebook {
+            color: #06315c;
+            background:
+                linear-gradient(90deg, transparent 0 56px, rgba(34, 205, 229, .55) 56px 58px, transparent 58px),
+                repeating-linear-gradient(to bottom, #f8feff 0 34px, #9bdceb 35px 36px);
+            border-color: #8eefff;
+            box-shadow: 0 22px 60px rgba(0, 0, 0, .42), 0 0 0 7px rgba(142, 239, 255, .18);
+        }
+
+        .notebook::before,
+        .notebook::after,
+        .signature {
+            color: #078eaf;
+        }
+
+        .header h1 {
+            color: #06315c;
+            text-shadow: 0 0 14px rgba(34, 205, 229, .42);
+        }
+
+        .subtitle,
+        .wish,
+        .final-signature {
+            color: #06315c;
+        }
+
+        .layer {
+            background: #22cde5;
+            border-color: #ffffff;
+            box-shadow: inset 0 -7px rgba(6, 49, 92, .2), 0 5px 0 rgba(6, 49, 92, .14);
+        }
+
+        .layer.bottom,
+        .layer.middle,
+        .layer.top {
+            background: #168fb9;
+        }
+
+        .cake-plate {
+            background: #ffffff;
+        }
+
+        .candle {
+            background: repeating-linear-gradient(135deg, #ffffff 0 5px, #22cde5 5px 9px);
+        }
+
+        .flame {
+            background: #d9fbff;
+            box-shadow: 0 0 12px 4px rgba(117, 239, 255, .7);
+        }
+
+        .back {
+            background: linear-gradient(135deg, #16bad5, #217bea);
+            box-shadow: 0 10px 24px rgba(22, 186, 213, .3);
+        }
+
+        body::before {
+            content: '✦    ·       ✧        ·     ✦       ·        ✧    ·     ✦';
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            color: rgba(189, 248, 255, .58);
+            font-size: .9rem;
+            letter-spacing: 1em;
+            line-height: 6rem;
+            white-space: pre-wrap;
+            animation: noteSparkle 6s ease-in-out infinite alternate;
+        }
+
+        .notebook {
+            box-shadow: 0 22px 60px rgba(0, 20, 60, .48), 0 0 0 7px rgba(142, 239, 255, .18), 0 0 42px rgba(34, 205, 229, .34);
+            animation: pageIn .8s ease both, notebookGlow 5s ease-in-out 1s infinite alternate;
+        }
+
+        .header h1 {
+            font-size: clamp(2.8rem, 8vw, 5.1rem);
+            text-shadow: 0 0 12px rgba(34, 205, 229, .9), 0 0 30px rgba(34, 205, 229, .65), 0 3px 0 #ffffff;
+            text-align: center;
+        }
+
+        .header {
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header .cake {
+            filter: drop-shadow(0 0 14px rgba(34, 205, 229, .72));
+        }
+
+        .wish {
+            padding: 22px 24px;
+            border-left: 0;
+            border-right: 0;
+            color: #06315c;
+            text-shadow: 0 1px rgba(255, 255, 255, .8);
+        }
+
+        .notebook::before,
+        .notebook::after {
+            text-shadow: 0 0 12px rgba(34, 205, 229, .8);
+        }
+
+        @keyframes noteSparkle {
+            from {
+                opacity: .24;
+                transform: translateY(0);
+            }
+
+            to {
+                opacity: .74;
+                transform: translateY(10px);
+            }
+        }
+
+        @keyframes notebookGlow {
+            from {
+                box-shadow: 0 22px 60px rgba(0, 20, 60, .48), 0 0 0 7px rgba(142, 239, 255, .18), 0 0 30px rgba(34, 205, 229, .24);
+            }
+
+            to {
+                box-shadow: 0 22px 60px rgba(0, 20, 60, .48), 0 0 0 7px rgba(142, 239, 255, .22), 0 0 62px rgba(34, 205, 229, .54);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="floating-hearts" aria-hidden="true"><span>♥</span><span>♥</span><span>♥</span><span>♥</span></div>
+    <main class="page">
+        <article class="notebook">
+            <div class="rings" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <header class="header">
+                <div class="cake" aria-label="Birthday cake with three candles">
+                    <span class="cake-plate"></span><span class="layer bottom"></span><span
+                        class="layer middle"></span><span class="layer top"></span>
+                    <span class="candle one"><span class="flame"></span></span><span class="candle two"><span
+                            class="flame"></span></span><span class="candle three"><span class="flame"></span></span>
+                </div>
+                <h1>Happy Birthday</h1>
+            </header>
+            <p class="wish">to my favourite autistic idiot chinese❤️
+                May God bless your life, grant you many more years of life, good health and every thing you deserve.
+
+                I'm so grateful to have you in my life and for all the moments we've shared together.
+                I want you to know how much you mean to me. I didn't want to just wish you happy birthday, post
+                something on instagram and that's it. I wanted to make you something "meaningful" spend hours making
+                this for you, especially because we're already far apart. I just think you deserve so much more than
+                just simple things.
+
+                You can count on me for anything you need.
+
+                You have so much potential, I have no doubt you'll achieve everything you want very soon. Keep chasing
+                your dreams and becoming the person you want to be. I'm so proud of the man you're becoming.
+
+                Enjoy your day, mi amor!
+                I love you so much ❤️ 💗</p>
+            <p class="signature">with all my love ♥</p>
+            <a class="back" href="index.html#memories-page">Next</a>
+        </article>
+    </main>
+</body>
+
+</html>
